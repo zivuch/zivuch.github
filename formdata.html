@@ -6,8 +6,11 @@
   </head>
   <body>
     <script>
-      var user = getParameterByName('username');
-      console.log(user);
+      const urlParams = new URLSearchParams(window.location.search);
+      var entries = urlParams.entries();
+      for(pair of entries) {
+        console.log(pair[0], pair[1]);
+      }
     </script>
   </body>
 </html>
