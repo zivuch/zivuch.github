@@ -5,10 +5,30 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
     <title></title>
+    <script>
+    const users = [
+      { username: 'zivuch', email: 'zivuch@gmail.com' },
+      { username: 'matan',  email: 'matan@gmail.com' }
+    ];
+
+    const validateform = (myform) => {
+        const fn = myform.users;
+        const jsonusers = JSON.stringify(users);
+        fn.value = jsonusers;
+        return true;
+    }
+    </script>
   </head>
   <body>
-    <form action="https://www.google.com/search" method="GET">
-      <input type="text" name="q" value="">
+    Users:
+    <form action="https://zivuch.github.io/formdata.html"
+          method="get"
+          onsubmit="return validateform(this)"
+          >
+      <input type="text"
+             name="users"
+             value=""
+             >
       <input type="submit" name="" value="Submit">
     </form>
   </body>
