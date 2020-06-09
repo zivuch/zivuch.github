@@ -1,7 +1,7 @@
 let xhr = new XMLHttpRequest();
 
 xhr.open('GET','https://zivuch.github.io/newajax/data.json');
-
+xhr.responseType = 'json';
 xhr.send();
 
 xhr.onload = function() {
@@ -10,7 +10,7 @@ xhr.onload = function() {
   }
   else{
     console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-    console.log(JSON.parse(xhr.response))
+    console.log(xhr.response.name)
   }
 }
 
