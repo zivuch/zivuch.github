@@ -10,7 +10,8 @@ xhr.onload = function() {
   }
   else{
     console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-    console.log('name',xhr.response)
+    const xml = xhr.response;
+    console.log(xml.getElementsByTagName('user'));
   }
 }
 
