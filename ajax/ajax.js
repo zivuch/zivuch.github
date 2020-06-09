@@ -1,7 +1,7 @@
 // 1 step
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
-xhr.responseType = 'json';
+xhr.open('GET', 'https://www.javatpoint.com/xmlpages/emails.xml');
+xhr.responseType = 'xmlDoc';
 xhr.send();
 
 xhr.onload = function(){
@@ -9,7 +9,7 @@ xhr.onload = function(){
     console.log(`Error: ${xhr.status}: ${xht.statusText}`);
   }
   else{
-    built(xhr.response);
+    console.log(xhr.response);
   }
 }
 
