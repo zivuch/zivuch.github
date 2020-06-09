@@ -1,7 +1,7 @@
 // 1 step
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://zivuch.github.io/ajax/data.xml');
-xhr.responseType = 'document';
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+xhr.responseType = 'json';
 xhr.send();
 
 xhr.onload = function(){
@@ -9,24 +9,17 @@ xhr.onload = function(){
     console.log(`Error: ${xhr.status}: ${xht.statusText}`);
   }
   else{
-    // const data = xhr.response;
-    // console.log(xhr.response);
-    // const data = JSON.parse(xhr.response);
     console.log(xhr.response);
-    const data = xhr.response;
-    console.log(data.getElementsByTagName('user'));
-    // console.log(JSON.parse(xhr.response));
   }
 }
 
-xhr.onprogress = function(event) {
-  if (event.lengthComputable) {
-    console.log(`Received ${event.loaded} of ${event.total} bytes`);
-  } else {
-    console.log(`Received ${event.loaded} bytes`); // no Content-Length
-  }
-
-};
+// xhr.onprogress = function(event) {
+//   if (event.lengthComputable) {
+//     console.log(`Received ${event.loaded} of ${event.total} bytes`);
+//   } else {
+//     console.log(`Received ${event.loaded} bytes`); // no Content-Length
+//   }
+// };
 
 xhr.onerror = function() {
   console.log('Error something wrong');
