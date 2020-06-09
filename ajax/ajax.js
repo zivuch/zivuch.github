@@ -12,7 +12,9 @@ xhr.onload = function(){
     // const data = xhr.response;
     // console.log(xhr.response);
     // const data = JSON.parse(xhr.response);
-    console.log(xhr.response); 
+    console.log(xhr.response);
+    const data = xhr.response;
+    console.log(data.getElementsByTagName('user')); 
     // console.log(JSON.parse(xhr.response));
   }
 }
