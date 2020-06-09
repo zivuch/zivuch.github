@@ -4,7 +4,7 @@ xhr.open('GET', 'https://www.javatpoint.com/xmlpages/emails.xml');
 
 xhr.withCredentials = true;
 
-xhr.responseType = 'xmlDoc';
+xhr.responseType = 'document';
 xhr.send();
 
 xhr.onload = function(){
@@ -25,7 +25,7 @@ xhr.onload = function(){
 // };
 
 xhr.onerror = function() {
-  console.log('Error something wrong!!!!');
+  console.log('Error something wrong###');
 };
 
 
