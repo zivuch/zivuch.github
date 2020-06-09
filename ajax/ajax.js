@@ -1,8 +1,6 @@
 // 1 step
 let xhr = new XMLHttpRequest();
-
-xhr.open('GET', 'https://zivuch.github.io/ajax/data.html');
-
+xhr.open('GET', 'https://zivuch.github.io/ajax/data.json');
 xhr.send();
 
 xhr.onload = function(){
@@ -10,8 +8,9 @@ xhr.onload = function(){
     console.log(`Error: ${xhr.status}: ${xht.statusText}`);
   }
   else{
-    const data = xhr.response;
-    document.getElementById('root').innerHTML = data;
+    // const data = xhr.response;
+    console.log(xhr.response);
+    console.log(JSON.parse(xhr.response));
   }
 }
 
