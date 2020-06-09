@@ -1,7 +1,7 @@
 // 1 step
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://zivuch.github.io/ajax/data.xml');
-xhr.responseType = 'document';
+xhr.open('GET', 'https://google.com/search?q=google');
+// xhr.responseType = 'document';
 xhr.send();
 
 xhr.onload = function(){
@@ -13,8 +13,8 @@ xhr.onload = function(){
     // console.log(xhr.response);
     // const data = JSON.parse(xhr.response);
     console.log(xhr.response);
-    const data = xhr.response;
-    console.log(data.getElementsByTagName('user')); 
+    // const data = xhr.response;
+    // console.log(data.getElementsByTagName('user')); 
     // console.log(JSON.parse(xhr.response));
   }
 }
