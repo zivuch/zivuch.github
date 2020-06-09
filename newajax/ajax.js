@@ -1,6 +1,6 @@
 let xhr = new XMLHttpRequest();
 
-xht.open('GET','https://zivuch.github.io/newajax/data.html');
+xhr.open('GET','https://zivuch.github.io/newajax/data.html');
 
 xhr.send();
 
