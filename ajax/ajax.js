@@ -1,6 +1,10 @@
 // 1 step
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://www.javatpoint.com/xmlpages/emails.xml');
+
+xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+xhr.setRequestHeader('Access-Control-Allow-Headers', "*");
+
 xhr.responseType = 'xmlDoc';
 xhr.send();
 
