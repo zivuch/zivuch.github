@@ -1,6 +1,6 @@
 let xhr = new XMLHttpRequest();
 
-xhr.open('GET','https://zivuch.github.io/newajax/data.xml');
+xhr.open('GET','https://zivuc.github.io/newajax/data.xml');
 xhr.responseType = 'document';
 xhr.send();
 
