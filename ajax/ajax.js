@@ -1,7 +1,7 @@
 // 1 step
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://zivuch.github.io/ajax/data.json');
-xhr.responseType = 'json';
+xhr.open('GET', 'https://zivuch.github.io/ajax/data.xml');
+xhr.responseType = 'document';
 xhr.send();
 
 xhr.onload = function(){
