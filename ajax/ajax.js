@@ -10,15 +10,16 @@ xhr.onload = function(){
     console.log(`Error: ${xhr.status}: ${xht.statusText}`);
   }
   else{
-    console.log(xhr.response);
+    const data = xhr.response;
+    document.getElementById('root').innerHTML = data;
   }
 }
 
 xhr.onprogress = function(event) {
   if (event.lengthComputable) {
-    alert(`Received ${event.loaded} of ${event.total} bytes`);
+    console.log(`Received ${event.loaded} of ${event.total} bytes`);
   } else {
-    alert(`Received ${event.loaded} bytes`); // no Content-Length
+    console.log(`Received ${event.loaded} bytes`); // no Content-Length
   }
 
 };
