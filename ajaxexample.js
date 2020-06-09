@@ -23,7 +23,6 @@ xhr.onprogress = function(event) {
   } else {
     console.log(`Received ${event.loaded} bytes`); // no Content-Length
   }
-
 };
 
 xhr.onerror = function() {
