@@ -1,6 +1,7 @@
 // 1 step
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://zivuch.github.io/ajax/data.json');
+xhr.responseType = 'json';
 xhr.send();
 
 xhr.onload = function(){
@@ -10,8 +11,8 @@ xhr.onload = function(){
   else{
     // const data = xhr.response;
     // console.log(xhr.response);
-    const data = JSON.parse(xhr.response);
-    console.log('username=',data[1].username);
+    // const data = JSON.parse(xhr.response);
+    console.log(xhr.response); 
     // console.log(JSON.parse(xhr.response));
   }
 }
