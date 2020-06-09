@@ -10,7 +10,7 @@ xhr.onload = function() {
   }
   else{
     console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-    console.log(xhr.response.name)
+    console.log(xhr.response[0].name)
   }
 }
 
