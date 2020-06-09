@@ -26,7 +26,7 @@ xhr.onload = function(){
 // };
 
 xhr.onerror = function() {
-  console.log('Error something wrong');
+  console.log('Error something wrong!!!!');
 };
 
 
