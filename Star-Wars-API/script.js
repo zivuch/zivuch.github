@@ -1,4 +1,4 @@
-console.log('ver 1.6 ajax');
+console.log('ver 1.7 ajax');
 // init ajax
 let xhr = new XMLHttpRequest();
 
@@ -40,7 +40,7 @@ function getInfo (){
  //Display info on screen
  function updateInfo(resp){
   // ajax
-  xhr.open('GET', 'https://swapi.dev/api/planets/2/');
+  xhr.open('GET', new URL(resp.homeworld));
   xhr.responseType = 'json';
   xhr.send();
   xhr.onload = function(){
