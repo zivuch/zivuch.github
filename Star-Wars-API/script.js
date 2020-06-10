@@ -1,5 +1,5 @@
-console.log('ver 1.3 ajax');
-
+console.log('ver 1.4 ajax');
+let xhr = new XMLHttpRequest();
 //Select elements in DOM
 let button = document.querySelector('#button');
 let names = document.querySelector('#name');
@@ -21,7 +21,7 @@ let homeWorld = document.querySelector('#home-world');
  	let apiUrl = 'https://swapi.dev/api/people/' + randomNumber + '/';
 
   // ajax
-  let xhr = new XMLHttpRequest();
+  
   xhr.open('GET', apiUrl);
   xhr.responseType = 'json';
   xhr.send();
@@ -49,7 +49,7 @@ let homeWorld = document.querySelector('#home-world');
  function updateInfo(resp){
 
   // ajax
-  let xhr = new XMLHttpRequest();
+
   xhr.open('GET', resp.homeworld);
   xhr.responseType = 'json';
   xhr.send();
