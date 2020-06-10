@@ -40,7 +40,7 @@ function getInfo (){
  //Display info on screen
  function updateInfo(resp){
   // ajax
-  const url = new URL(resp.homeworld));
+  const url = new URL(resp.homeworld);
   xhr.open('GET', url.href);
   xhr.responseType = 'json';
   xhr.send();
