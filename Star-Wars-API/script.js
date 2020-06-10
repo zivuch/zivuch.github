@@ -1,4 +1,4 @@
-
+console.log('ver 1.0 ajax');
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -20,16 +20,38 @@ let homeWorld = document.querySelector('#home-world');
 
  	let apiUrl = 'https://swapi.dev/api/people/' + randomNumber + '/';
 
-    //Fetch Characters
- 	fetch(apiUrl)
-      .then(response => response.json())
-      // .then(console.log)
-      .then(resp => {
-         updateInfo(resp)
-      }).catch(e => {
-      	  updateInfoWithError();
-          console.log('there was an error');
-      })
+  // ajax
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', apiUrl);
+  xhr.responseType = 'json';
+  xhr.send();
+
+  xhr.onload = function(){
+    if(xhr.status != 200){
+      //console.log(`Error: ${xhr.status}: ${xht.statusText}`);
+      updateInfoWithError();
+      console.log('there was an error');
+    }
+    else{
+      updateInfo(xhr.response);
+    }
+  }
+
+  xhr.onerror = function() {
+    updateInfoWithError();
+    console.log('there was an error');
+  };
+
+  // //Fetch Characters
+ 	// fetch(apiUrl)
+  //     .then(response => response.json())
+  //     // .then(console.log)
+  //     .then(resp => {
+  //        updateInfo(resp)
+  //     }).catch(e => {
+  //     	  updateInfoWithError();
+  //         console.log('there was an error');
+  //     })
 
 
  }
@@ -38,15 +60,34 @@ let homeWorld = document.querySelector('#home-world');
  //Display info on screen
  function updateInfo(resp){
 
-    //Fetch Home World of Character
- 	fetch(resp.homeworld)
-      .then(response => response.json())
-       .then(re => {
-         // console.log(re.name)
-         // planet = re.name
-         // console.log(planet)
-         updateInfo2(re)
-      })
+  // ajax
+
+  // //Fetch Home World of Character
+ 	// fetch(resp.homeworld)
+  //     .then(response => response.json())
+  //      .then(re => {
+  //        // console.log(re.name)
+  //        // planet = re.name
+  //        // console.log(planet)
+  //        updateInfo2(re)
+  //     })
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', resp.homeworld);
+  xhr.responseType = 'json';
+  xhr.send();
+
+  xhr.onload = function(){
+    if(xhr.status != 200){
+      console.log('there was an error');
+    }
+    else{
+      updateInfo2(re)
+    }
+  }
+
+  xhr.onerror = function() {
+    console.log('there was an error');
+  };
 
  	console.log(resp);
 
