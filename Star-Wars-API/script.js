@@ -1,4 +1,6 @@
-console.log('ver 2.2 ajax');
+console.log('ver 2.3 ajax');
+// init ajax
+let xhr = new XMLHttpRequest();
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -16,7 +18,6 @@ function getInfo (){
  	let randomNumber = Math.floor((Math.random() * 88) + 1);
  	let apiUrl = 'https://swapi.dev/api/people/' + randomNumber + '/';
   // ajax
-  let xhr = new XMLHttpRequest();
   xhr.open('GET', apiUrl);
   xhr.responseType = 'json';
   xhr.send();
@@ -39,19 +40,21 @@ function getInfo (){
  //Display info on screen
  function updateInfo(resp){
   // ajax
-  let xhr2 = new XMLHttpRequest();
-  xhr2.open('GET', resp.homeworld);
-  xhr2.responseType = 'json';
-  xhr2.send();
-  xhr2.onload = function(){
-    if(xhr2.status != 200){
+  let url = new URL(resp.homeworld);
+  url.protocol = 'https:'
+  xhr.open('GET', url.href);
+  console.log('url',url.href);
+  xhr.responseType = 'json';
+  xhr.send();
+  xhr.onload = function(){
+    if(xhr.status != 200){
       console.log('there was an error 2');
     }
     else{
-      updateInfo2(xhr2.response)
+      updateInfo2(xhr.response)
     }
   }
-  xhr2.onerror = function() {
+  xhr.onerror = function() {
     console.log('there was an error 3');
   };
  	console.log(resp.homeworld);
