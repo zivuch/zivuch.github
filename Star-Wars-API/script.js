@@ -1,4 +1,4 @@
-console.log('ver 1.2 ajax');
+console.log('ver 1.3 ajax');
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -56,7 +56,7 @@ let homeWorld = document.querySelector('#home-world');
 
   xhr.onload = function(){
     if(xhr.status != 200){
-      console.log('there was an error');
+      console.log('there was an error 2');
     }
     else{
       updateInfo2(xhr.response)
@@ -64,7 +64,7 @@ let homeWorld = document.querySelector('#home-world');
   }
 
   xhr.onerror = function() {
-    console.log('there was an error');
+    console.log('there was an error 3');
   };
 
  	console.log(resp.homeworld);
