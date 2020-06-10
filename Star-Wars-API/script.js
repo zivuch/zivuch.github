@@ -1,4 +1,6 @@
-console.log('ver 1.5 ajax');
+console.log('ver 1.6 ajax');
+// init ajax
+let xhr = new XMLHttpRequest();
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -8,25 +10,17 @@ let gender = document.querySelector('#gender');
 let birthYear = document.querySelector('#birth-year');
 let homeWorld = document.querySelector('#home-world');
 
-
 //Get the info from API and catch for Errors
- function getInfo (){
-
-    //Call Loading Data
+function getInfo (){
+  //Call Loading Data
  	updateWithLoading();
-
-    //Get Random people in the API between 1 and 88
+  //Get Random people in the API between 1 and 88
  	let randomNumber = Math.floor((Math.random() * 88) + 1);
-
  	let apiUrl = 'https://swapi.dev/api/people/' + randomNumber + '/';
-
   // ajax
-  let xhr = new XMLHttpRequest();
-
   xhr.open('GET', apiUrl);
   xhr.responseType = 'json';
   xhr.send();
-
   xhr.onload = function(){
     if(xhr.status != 200){
       //console.log(`Error: ${xhr.status}: ${xht.statusText}`);
@@ -37,91 +31,65 @@ let homeWorld = document.querySelector('#home-world');
       updateInfo(xhr.response);
     }
   }
-
   xhr.onerror = function() {
     updateInfoWithError();
     console.log('there was an error');
   };
-
  }
-
 
  //Display info on screen
  function updateInfo(resp){
-
   // ajax
-  let xhr2 = new XMLHttpRequest();
-
-  xhr2.open('GET', resp.homeworld);
-  xhr2.responseType = 'json';
-  xhr2.send();
-
-  xhr2.onload = function(){
-    if(xhr2.status != 200){
+  xhr.open('GET', 'https://swapi.dev/api/planets/2/');
+  xhr.responseType = 'json';
+  xhr.send();
+  xhr.onload = function(){
+    if(xhr.status != 200){
       console.log('there was an error 2');
     }
     else{
-      updateInfo2(xhr2.response)
+      updateInfo2(xhr.response)
     }
   }
-
-  xhr2.onerror = function() {
+  xhr.onerror = function() {
     console.log('there was an error 3');
   };
-
  	console.log(resp.homeworld);
-
-    console.log(resp.name);
-
+  console.log(resp.name);
  	console.log(names);
 
-    names.innerText = resp.name;
-    height.innerText = `Height: ${resp.height}`;
-    gender.innerText = `Gender: ${resp.gender}`;
-    birthYear.innerText = `Birth Year: ${resp.birth_year}`;
-    // homeWorld.innerText = `Home World: ${planet}`;
+  names.innerText = resp.name;
+  height.innerText = `Height: ${resp.height}`;
+  gender.innerText = `Gender: ${resp.gender}`;
+  birthYear.innerText = `Birth Year: ${resp.birth_year}`;
+  // homeWorld.innerText = `Home World: ${planet}`;
+}
 
 
- }
-
-
- //Display Home World
- function updateInfo2(re){
+//Display Home World
+function updateInfo2(re){
  	// console.log(re.name)
  	// return re.name;
-
  	homeWorld.innerText = `Home World: ${re.name}`;
- }
+}
 
+//Display when Error
+function updateInfoWithError(){
+  names.innerText = 'Oh No! That person isnt available.';
+  height.innerText = ''
+  gender.innerText = ''
+  birthYear.innerText = ''
+  homeWorld.innerText = ''
+}
 
-
- //Display when Error
- function updateInfoWithError(){
-
-
-    names.innerText = 'Oh No! That person isnt available.';
-    height.innerText = ''
-    gender.innerText = ''
-    birthYear.innerText = ''
-    homeWorld.innerText = ''
-
-
- }
-
-
- //Display when updating info (pending data)
- function updateWithLoading(){
-
-   //Icon link: https://fontawesome.com/how-to-use/on-the-web/styling/animating-icons
-
-    names.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> <p>Loading...</p>';
-    height.innerText = ''
-    gender.innerText = ''
-    birthYear.innerText = ''
-    homeWorld.innerText = ''
-
-
- }
-
+//Display when updating info (pending data)
+function updateWithLoading(){
+  //Icon link: https://fontawesome.com/how-to-use/on-the-web/styling/animating-icons
+  names.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> <p>Loading...</p>';
+  height.innerText = ''
+  gender.innerText = ''
+  birthYear.innerText = ''
+  homeWorld.innerText = ''
+}
 
 button.addEventListener('click', getInfo);
