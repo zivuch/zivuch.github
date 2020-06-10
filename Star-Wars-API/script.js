@@ -59,7 +59,7 @@ let homeWorld = document.querySelector('#home-world');
       console.log('there was an error');
     }
     else{
-      updateInfo2(re)
+      updateInfo2(xhr.response)
     }
   }
 
