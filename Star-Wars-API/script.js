@@ -1,4 +1,4 @@
-console.log('ver 1.0 ajax');
+console.log('ver 1.1 ajax');
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -42,18 +42,6 @@ let homeWorld = document.querySelector('#home-world');
     console.log('there was an error');
   };
 
-  // //Fetch Characters
- 	// fetch(apiUrl)
-  //     .then(response => response.json())
-  //     // .then(console.log)
-  //     .then(resp => {
-  //        updateInfo(resp)
-  //     }).catch(e => {
-  //     	  updateInfoWithError();
-  //         console.log('there was an error');
-  //     })
-
-
  }
 
 
@@ -61,16 +49,6 @@ let homeWorld = document.querySelector('#home-world');
  function updateInfo(resp){
 
   // ajax
-
-  // //Fetch Home World of Character
- 	// fetch(resp.homeworld)
-  //     .then(response => response.json())
-  //      .then(re => {
-  //        // console.log(re.name)
-  //        // planet = re.name
-  //        // console.log(planet)
-  //        updateInfo2(re)
-  //     })
   let xhr = new XMLHttpRequest();
   xhr.open('GET', resp.homeworld);
   xhr.responseType = 'json';
