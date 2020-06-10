@@ -1,4 +1,4 @@
-console.log('ver 1.8 ajax');
+console.log('ver 1.9 ajax');
 // init ajax
 let xhr = new XMLHttpRequest();
 
@@ -40,8 +40,8 @@ function getInfo (){
  //Display info on screen
  function updateInfo(resp){
   // ajax
-  console.log('url',new URL(resp.homeworld));
-  xhr.open('GET', new URL(resp.homeworld));
+  const url = new URL(resp.homeworld));
+  xhr.open('GET', url.href);
   xhr.responseType = 'json';
   xhr.send();
   xhr.onload = function(){
