@@ -1,4 +1,4 @@
-console.log('ver 1.1 ajax');
+console.log('ver 1.2 ajax');
 
 //Select elements in DOM
 let button = document.querySelector('#button');
@@ -67,7 +67,7 @@ let homeWorld = document.querySelector('#home-world');
     console.log('there was an error');
   };
 
- 	console.log(resp);
+ 	console.log(resp.homeworld);
 
     console.log(resp.name);
 
