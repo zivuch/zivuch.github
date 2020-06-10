@@ -18,7 +18,7 @@ let homeWorld = document.querySelector('#home-world');
     //Get Random people in the API between 1 and 88
  	let randomNumber = Math.floor((Math.random() * 88) + 1);
 
- 	let apiUrl = 'https://swapi.co/api/people/' + randomNumber + '/';
+ 	let apiUrl = 'https://swapi.dev/api/people/' + randomNumber + '/';
 
     //Fetch Characters
  	fetch(apiUrl)
@@ -29,8 +29,8 @@ let homeWorld = document.querySelector('#home-world');
       }).catch(e => {
       	  updateInfoWithError();
           console.log('there was an error');
-      })  
-      
+      })
+
 
  }
 
@@ -83,7 +83,7 @@ let homeWorld = document.querySelector('#home-world');
     gender.innerText = ''
     birthYear.innerText = ''
     homeWorld.innerText = ''
-    
+
 
  }
 
@@ -98,7 +98,7 @@ let homeWorld = document.querySelector('#home-world');
     gender.innerText = ''
     birthYear.innerText = ''
     homeWorld.innerText = ''
-    
+
 
  }
 
